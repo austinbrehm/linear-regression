@@ -89,7 +89,7 @@ final_cost = compute_cost_function(size, price, w_final, b_final)
 print(f'Final Cost: {final_cost:0.2f}')
 
 # predict price for 10 oz coffee using w_final and b_final
-size_10 = w_final * 8 + b_final
+size_10 = w_final * 10 + b_final
 print(f'Price prediction for 10 oz: ${size_10:0.2f}')
 
 if 1.50 < size_10 < 1.75:
