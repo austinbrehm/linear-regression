@@ -10,8 +10,9 @@ price = np.array([1.50, 1.75, 2, 2.50, 1.55, 1.60, 1.45, 1.60, 1.58, 1.80, 1.70,
 
 
 def plot(x, y, w, b, title, x_label, y_label):
-    plt.scatter(x, y, marker='o', c='b')
-    plt.plot(x, w * x + b, '-r', label=f'y = {w:0.2f}x + {b:0.2f}')
+    plt.style.use('dark_background')
+    plt.scatter(x, y, marker='o', c='lime')
+    plt.plot(x, w * x + b, 'fuchsia', label=f'y = {w:0.2f}x + {b:0.2f}')
     plt.title(title)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
