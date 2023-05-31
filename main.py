@@ -59,42 +59,47 @@ def gradient_descent(x, y, w, b, alpha, iterations):
     return w, b, cost_history
 
 
-# 1. Data Collection [Note: x_train = size, y_train = price]
-size = np.array([8, 12, 16, 20, 8, 8, 8, 8, 8, 12, 12, 12, 12, 12])
-price = np.array([1.50, 1.75, 2, 2.50, 1.55, 1.60, 1.45, 1.60, 1.58, 1.80, 1.70, 1.75, 1.72, 1.78])
+def run():
+    # 1. Data Collection [Note: x_train = size, y_train = price]
+    size = np.array([8, 12, 16, 20, 8, 8, 8, 8, 8, 12, 12, 12, 12, 12])
+    price = np.array([1.50, 1.75, 2, 2.50, 1.55, 1.60, 1.45, 1.60, 1.58, 1.80, 1.70, 1.75, 1.72, 1.78])
 
-# 2. Initialize w, b, alpha (learning rate), and iterations [Note: change these parameters to alter model output]
-initial_w = 0
-initial_b = 0
-initial_alpha = 0.00005
-initial_iterations = 10000
+    # 2. Initialize w, b, alpha (learning rate), and iterations [Note: change these parameters to alter model output]
+    initial_w = 0
+    initial_b = 0
+    initial_alpha = 0.00005
+    initial_iterations = 10000
 
-# 3. Compute initial cost using initial parameters
-initial_cost = compute_cost_function(size, price, initial_w, initial_b)
-print(f'Initial Cost Function Value: {initial_cost:0.2f}')
+    # 3. Compute initial cost using initial parameters
+    initial_cost = compute_cost_function(size, price, initial_w, initial_b)
+    print(f'Initial Cost Function Value: {initial_cost:0.2f}')
 
-# 4. Compute gradient
-w_gradient, b_gradient = compute_gradient(size, price, initial_w, initial_b)
-print(f'dj_dw: {w_gradient:0.2f}\ndj_db: {b_gradient:0.2f}')
+    # 4. Compute gradient
+    w_gradient, b_gradient = compute_gradient(size, price, initial_w, initial_b)
+    print(f'dj_dw: {w_gradient:0.2f}\ndj_db: {b_gradient:0.2f}')
 
-# 5. Compute w and b using gradient descent
-w_final, b_final, cost_history_final = gradient_descent(size, price, initial_w, initial_b, initial_alpha,
-                                                        initial_iterations)
-print(f'w_final: {w_final:0.2f}\nb_final: {b_final:0.2f}')
+    # 5. Compute w and b using gradient descent
+    w_final, b_final, cost_history_final = gradient_descent(size, price, initial_w, initial_b, initial_alpha,
+                                                            initial_iterations)
+    print(f'w_final: {w_final:0.2f}\nb_final: {b_final:0.2f}')
 
-# 6. Compute final cost
-final_cost = compute_cost_function(size, price, w_final, b_final)
-print(f'Final Cost: {final_cost:0.2f}')
+    # 6. Compute final cost
+    final_cost = compute_cost_function(size, price, w_final, b_final)
+    print(f'Final Cost: {final_cost:0.2f}')
 
-# 7. Predict price for 10 oz coffee using w_final and b_final
-predict_size_10 = w_final * 10 + b_final
-print(f'Price prediction for 10 oz: ${predict_size_10:0.2f}')
+    # 7. Predict price for 10 oz coffee using w_final and b_final
+    predict_size_10 = w_final * 10 + b_final
+    print(f'Price prediction for 10 oz: ${predict_size_10:0.2f}')
 
-# 8. Test results
-if 1.50 < predict_size_10 < 1.75:
-    print('SUCCESS')
-else:
-    print('\nFAIL')
+    # 8. Test results
+    if 1.50 < predict_size_10 < 1.75:
+        print('SUCCESS')
+    else:
+        print('\nFAIL')
 
-# 9. Plot initial data and line of best fit
-plot(size, price, w_final, b_final, 'Linear Regression: Coffee Prices', 'size (oz)', 'price ($)')
+    # 9. Plot initial data and line of best fit
+    plot(size, price, w_final, b_final, 'Linear Regression: Coffee Prices', 'size (oz)', 'price ($)')
+
+
+if __name__ == '__main__':
+    run()

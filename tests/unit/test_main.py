@@ -15,11 +15,5 @@ class TestMain(unittest.TestCase):
         self.assertEqual(main.gradient_descent(np.array([1]), np.array([1]), 1, 1, 0.5, 1), (0.5, 0.5, [0]))
 
 
-
-
-
-
-
-
-
-
+if __name__ == '__main__':
+    unittest.main()
