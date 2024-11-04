@@ -1,3 +1,3 @@
 # Linear Regression: Coffee Price Prediction
-Use single linear regression (SLR) with stochastic gradient descent to predict 
-the price of coffee. 
+Predict the price of coffee using single linear regression (SLR) and
+stochastic gradient descent. 
