@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def compute_cost_function(x: np.array, y: np.array, w: float, b: float) -> float:
+def compute_cost_function(x: np.ndarray, y: np.ndarray, w: float, b: float) -> float:
     """Computes the cost function.
 
     Args:
@@ -26,7 +26,7 @@ def compute_cost_function(x: np.array, y: np.array, w: float, b: float) -> float
     return cost
 
 
-def compute_gradient(x: np.array, y: np.array, w: float, b: float):
+def compute_gradient(x: np.ndarray, y: np.ndarray, w: float, b: float):
     """Computes the gradient.
 
     Args:
@@ -57,7 +57,7 @@ def compute_gradient(x: np.array, y: np.array, w: float, b: float):
 
 
 def gradient_descent(
-    x: np.array, y: np.array, w: float, b: float, alpha: float, iterations: int
+    x: np.ndarray, y: np.ndarray, w: float, b: float, alpha: float, iterations: int
 ):
     """Performs stochastic gradient descent to find the w and b values
     that minimizes a cost function.
@@ -89,7 +89,7 @@ def gradient_descent(
 
 
 def plot(
-    x: np.array, y: np.array, w: float, b: float, title: str, x_label: str, y_label: str
+    x: np.ndarray, y: np.ndarray, w: float, b: float, title: str, x_label: str, y_label: str
 ):
     """Plot the data.
 
@@ -138,7 +138,7 @@ def predict_coffee_price(
         f"descent to predict the price of a {predict_size} oz coffee!"
     )
     # Data.
-    size = np.array([8, 12, 16, 20, 8, 8, 8, 8, 8, 12, 12, 12, 16, 16])
+    size = np.ndarray([8, 12, 16, 20, 8, 8, 8, 8, 8, 12, 12, 12, 16, 16])
     price = np.array(
         [
             1.50,
